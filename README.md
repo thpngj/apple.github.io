@@ -1,2 +1,1 @@
-# apple.github.io
-苹果
+# 这就是我…
