@@ -6,17 +6,364 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>苹果树下</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+    <style>
+        .dhtml_box{ position: absolute; width: 100%; height: 100%; left:0; top:0; z-index: 0;}
+        .swiper-container{ position: absolute; width: 100%; height: 100%; left:0; top:0; z-index: 1;}
+
+        .content_box{ color:#444; margin:20px; padding:20px; border-radius:10px;}
+        .content_box .title_box{ padding-bottom:15px; }
+        .content_box .title_box[class*=van-hairline]::after{ border-color:#fff}
+        .content_box .title_box .d_tit{ font-size:22px; font-weight: bold; color:#fff;}
+        .content_box .title_box .p_info{ font-size:13px; color:#fff;}
+
+
+        .content_box .my_info_box{ margin-top:15px;}
+        .content_box .my_info_box li{ padding:10px 0;  font-size:14px;  color:#fff;}
+        .content_box .my_info_box li label{ display: inline-block; width: 60px; font-size:13px;}
+
+        .content_box .qr_box{ margin-top:20px;}
+        .content_box .qr_box .p_img{ width: 120px; height: 120px; margin:0 auto;}
+        .content_box .qr_box .p_img img{ width: 100%}
+        .content_box .qr_box .p_text{ margin-top:10px; font-size:12px; text-align: center; color:#0a7152}
+
+       .content_box .my_info_text{ margin:20px 0; color:#fff; font-size:16px;}
+
+        .bgc_0{background-color:#0abb85;} /* 9dcedc  0abb85*/
+        .bgc_1{background-color: #47b6b8;}
+        .bgc_2{background-color: #a489e8;}
+        .bgc_3{background-color: #90bc59;}
+
+        .my_work_list{ margin-top:30px;}
+        .my_work_list.van-steps{ background-color:inherit;}
+        .my_work_list.van-steps .van-step{ color:#fff;}
+        .my_work_list.van-steps .van-step--vertical{ padding-bottom:30px; }
+        .my_work_list .van-step__circle{ background-color: #fff;}
+
+        .my_work_list .h_tit{ font-size:15px; font-weight:bold;}
+        .my_work_list .p_date{ margin-top:5px; font-size:12px;}
+        .my_work_list .d_info{ margin-top:10px; font-size:14px; line-height: 1.8;}
+
+
+        .my_skill_list{ margin-top:35px;}
+        .my_skill_list>ul{ display: flex; flex-flow: row wrap;}
+        .my_skill_list>ul li{flex:0 1 33.33%; text-align: center; margin-bottom:15px;}
+        .my_skill_list>ul li .van-circle{ }
+        .my_skill_list>ul li .van-circle .d_txt{ position: absolute; top:50%; left:0; width: 100%; text-align: center; transform: translateY(-50%); color:#fff; font-size:12px; }
+        .my_skill_list>ul li .van-circle .d_txt span{ font-size:15px;}
+
+        .my_case_list{ margin-top:20px;}
+        .my_case_list>ul{ display: flex; flex-flow: row wrap;}
+        .my_case_list>ul li{flex:0 1 33.33%; text-align: center; margin-bottom:15px;}
+        .my_case_list>ul li .p_qr{ margin:10px 10px 5px;}
+        .my_case_list>ul li .p_qr img{ width: 100%; vertical-align: top;}
+        .my_case_list>ul li .p_txt{ font-size:13px; color:#fff;}
+
+        .my_case_info{ margin-top:20px; padding-top:20px; font-size:14px; color:#395912; line-height: 1.8;}
+        .my_case_info[class*=van-hairline]::after{ border-color:#fff}
+
+    </style>
 </head>
-<body>
-<div style="text-align: center">
-    <h1>Apple</h1>
-    <h5>65292975@qq.com</h5>
-    <div>
-        我来自Mars，热爱Web、图形和交互设计。<br>
-        我专门研究符合标准的网站，关注可用性。<br>
-        [微信公众号] [微信小程序] [webApp] …<br>
-        热爱生活，热爱设计，热爱创新。<br>
+<body class="bgc_0">
+
+<div id="app" class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="content_box">
+                <div class="van-hairline--bottom title_box ">
+                    <div class="d_tit">About Me</div>
+                    <p class="p_info">一位在前端道路上渐行渐远的小学生…</p>
+                </div>
+                <div class="my_info_box">
+                    <ul>
+                        <li><label>姓名：</label>王延恒</li>
+                        <li><label>生日：</label>1986-11-16</li>
+                        <li><label>籍贯：</label>河南 - 平顶山</li>
+                        <li><label>手机：</label>13526873881</li>
+                        <li><label>QQ：</label>65292975</li>
+                        <li><label>E-Mail：</label>65292975@qq.com</li>
+                    </ul>
+                </div>
+
+                <div class="qr_box">
+                    <p class="p_img"><img src="images/my_wx_qr.jpg"></p>
+                    <p class="p_text">长按或扫描识别二维码添加微信</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="swiper-slide">
+
+            <div class="content_box">
+                <div class="van-hairline--bottom title_box ">
+                    <div class="d_tit">Work Experience</div>
+                    <p class="p_info">每一次调整都是新的起点…</p>
+                </div>
+
+                <van-steps direction="vertical" class="my_work_list" :active="-1">
+                    <van-step>
+                        <h3 class="h_tit">郑州翔天信息技术有限公司</h3>
+                        <p class="p_date">2011年05月 至 ---</p>
+                        <div class="d_info">
+                            1.河南电信公众号开发维护；<br>
+                            2.公司自有项目开发维护；<br>
+                            3.技术部工作安排及项目规划；<br>
+                            4.日常项目维护等；<br>
+                        </div>
+                    </van-step>
+                    <van-step>
+                        <h3 class="h_tit">河南宇信科技有限公司</h3>
+                        <p class="p_date">2008年04月 至 2011年03月</p>
+                        <div class="d_info">1.公司项目网站效果图设计，切图html代码编写等</div>
+                    </van-step>
+                </van-steps>
+
+            </div>
+
+
+        </div>
+        <div class="swiper-slide">
+            <div class="content_box">
+                <div class="van-hairline--bottom title_box ">
+                    <div class="d_tit">My Skill</div>
+                    <p class="p_info">保持好奇，努力学习…</p>
+                </div>
+
+                <div class="my_skill_list">
+                    <ul>
+                        <li v-for="(items,index) in mySkillArr" :key="index">
+                            <van-circle v-model="items.c" :rate="items.exp" color="#d6b2ff" layer-color="#9075d4" size="80px" :speed="100" :stroke-width="50"> <div class="d_txt"><span>{{items.name}}</span><br>{{items.exp}}% </div> </van-circle>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="content_box">
+                <div class="van-hairline--bottom title_box ">
+                    <div class="d_tit">My Case</div>
+                    <p class="p_info">路漫漫其修远兮…</p>
+                </div>
+
+                <div class="my_case_list">
+                    <ul>
+                        <li v-for="(items,index) in myCaseArr" :key="index">
+                            <p class="p_qr"><img :src="'images/'+items.qr"></p>
+                            <p class="p_txt">{{items.name}}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="my_case_info van-hairline--top">
+                    以上是近期线上项目，微信公众号开发，小程序开发，项目规划，UI设计，HTML，JS，体验交互，后端服务接口对接，全由本人一个完成；<br>其中[预约服务]中的后端服务（PHP+mysql）也是本人一人完成。
+                </div>
+
+
+
+
+            </div>
+
+        </div>
     </div>
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
 </div>
+
+<div id="dom" class="dhtml_box"></div>
+
 </body>
+
+<script>
+    particlesJS('dom',
+        {
+            "particles": {
+                "number": {
+                    "value": 50,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1000
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "star",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "images/logo.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value":10,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "bounce",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 300,
+                        "rotateY": 300
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true,
+            "config_demo": {
+                "hide_card": false,
+                "background_color": "#b61924",
+                "background_image": "",
+                "background_position": "50% 50%",
+                "background_repeat": "no-repeat",
+                "background_size": "cover"
+            }
+        }
+    );
+
+var app = new Vue({
+    el:'#app',
+    data:{
+        msg:'789789',
+        currentRate:50,
+        mySkillArr:[
+            {name:'PS',exp:95,c:0},
+            {name:'AI',exp:70,c:0},
+            {name:'Axure',exp:80,c:0},
+            {name:'HTML5',exp:90,c:0},
+            {name:'CSS3',exp:85,c:0},
+            {name:'JS',exp:70,c:0},
+            {name:'Vue.js',exp:70,c:0},
+            {name:'Vue-cli3',exp:50,c:0},
+            {name:'ES6',exp:50,c:0},
+            {name:'Node.js',exp:40,c:0},
+            {name:'PHP',exp:40,c:0},
+            {name:'Mysql',exp:40,c:0},
+        ],
+        myCaseArr:[
+            {name:'河南电信',qr:'qr_hndx.jpg'},
+            {name:'闪易挪车',qr:'qr_sync.jpg'},
+            {name:'新征购',qr:'qr_xzg.jpg'},
+            {name:'世卿防滑',qr:'qr_sqfh.jpg'},
+            {name:'预约服务',qr:'qr_yyfw.jpg'},
+        ],
+    },
+    computed:{
+    },
+    methods:{},
+    mounted:function(){
+
+    },
+})
+
+    var mySwiper = new Swiper ('.swiper-container', {
+        initialSlide :3,
+        direction: 'vertical', // 垂直切换选项
+        loop: false, // 循环模式选项
+        mousewheel: true, //支持鼠标滚轮
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+
+        on:{
+            slideChange: function(){
+                console.log(this.activeIndex);
+                document.querySelector('body').removeAttribute('class');
+                document.querySelector('body').setAttribute('class','bgc_'+this.activeIndex);
+            },
+        },
+    })
+
+</script>
+
+
 </html>
