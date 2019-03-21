@@ -143,7 +143,8 @@
                     <p class="p_info">保持好奇，努力学习…</p>
                 </div>
 
-                <div class="my_skill_list">
+
+                <div class="my_skill_list" v-if="isShow">
                     <ul>
                         <li v-for="(items,index) in mySkillArr" :key="index">
                             <van-circle v-model="items.c" :rate="items.exp" color="#d6b2ff" layer-color="#9075d4" size="80px" :speed="100" :stroke-width="50"> <div class="d_txt"><span>{{items.name}}</span><br>{{items.exp}}% </div> </van-circle>
@@ -163,7 +164,7 @@
 
                 <div class="my_case_list">
                     <ul>
-                        <li v-for="(items,index) in myCaseArr" :key="index">
+                        <li v-for="(items,index) in myCaseArr" :key="index" @click="qrPreview(items.qr)">
                             <p class="p_qr"><img :src="'images/'+items.qr"></p>
                             <p class="p_txt">{{items.name}}</p>
                         </li>
@@ -312,8 +313,9 @@
 var app = new Vue({
     el:'#app',
     data:{
-        msg:'789789',
+        msg:'',
         currentRate:50,
+        isShow:false,
         mySkillArr:[
             {name:'PS',exp:95,c:0},
             {name:'AI',exp:70,c:0},
@@ -331,14 +333,20 @@ var app = new Vue({
         myCaseArr:[
             {name:'河南电信',qr:'qr_hndx.jpg'},
             {name:'闪易挪车',qr:'qr_sync.jpg'},
-            {name:'新征购',qr:'qr_xzg.jpg'},
+            {name:'乐荐优品',qr:'qr_ljyp.jpg'},
             {name:'世卿防滑',qr:'qr_sqfh.jpg'},
             {name:'预约服务',qr:'qr_yyfw.jpg'},
         ],
     },
     computed:{
     },
-    methods:{},
+    methods:{
+        qrPreview:function(qrSrc){
+            vant.ImagePreview([
+                'images/'+qrSrc,
+            ]);
+        }
+    },
     mounted:function(){
 
     },
@@ -359,6 +367,12 @@ var app = new Vue({
                 console.log(this.activeIndex);
                 document.querySelector('body').removeAttribute('class');
                 document.querySelector('body').setAttribute('class','bgc_'+this.activeIndex);
+                if(this.activeIndex===2){
+                    app.isShow=true;
+                }else{
+                    app.isShow=false
+                };
+
             },
         },
     })
