@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/default.css" type="text/css">
     <style>
         .dhtml_box{ position: absolute; width: 100%; height: 100%; left:0; top:0; z-index: 0;}
-        .swiper-container{ position: absolute; width: 100%; height: 100%; left:0; top:0; z-index: 1;}
+        .swiper-container{ position: absolute; max-width: 750px; height: 100%; left:0; top:0; z-index: 1;}
 
         .content_box{ color:#444; margin:20px; padding:20px; border-radius:10px;}
         .content_box .title_box{ padding-bottom:15px; }
@@ -75,11 +75,20 @@
         .my_case_info{ margin-top:20px; padding-top:20px; font-size:14px; color:#395912; line-height: 1.8;}
         .my_case_info[class*=van-hairline]::after{ border-color:#fff}
 
+        .icon_up{ position: fixed; bottom:15px; left:50%; z-index: 2; transform: translateX(-50%); animation:upup ease 0.5s infinite alternate;}
+
+        @keyframes upup {
+            0%{ bottom:15px;}
+            100%{ bottom:30px;}
+        }
+
     </style>
 </head>
 <body class="bgc_0">
 
 <div id="app" class="swiper-container">
+
+    <van-icon v-if="upIconShow" class="icon_up" name="arrow-up" color="#fff" size="30px" ></van-icon>
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="content_box">
@@ -314,6 +323,7 @@
 var app = new Vue({
     el:'#app',
     data:{
+        upIconShow:true,
         msg:'',
         currentRate:50,
         isShow:false,
@@ -373,6 +383,12 @@ var app = new Vue({
                 }else{
                     app.isShow=false
                 };
+
+                if(this.activeIndex===3){
+                    app.upIconShow=false;
+                }else{
+                    app.upIconShow=true;
+                }
 
             },
         },
